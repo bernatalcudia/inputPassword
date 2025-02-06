@@ -1,16 +1,20 @@
 const inputBox = document.getElementById('input-box');
 const h3 = document.createElement('h3');
 
-function passwordRequired(params) {
-    const lengthPassword = Number(inputBox.value)
-    if (lengthPassword < 10) {
-
+function passwordRequired() {
+    const lengthPassword = inputBox.value.length
+    if (lengthPassword > 10) {
+        h3.style.color = 'green';
+        h3.innerText = 'The password is save'
+    } if (lengthPassword > 8 && lengthPassword == 10) {
+        h3.style.color = 'yellow';
+        h3.innerText = 'The password is not save'
     } if (lengthPassword < 8) {
-
-    } else {
-
+        h3.style.color = 'red';
+        h3.innerText = 'The password is to short'
     }
-    h3.innerText = 'The password is not save'
+
+    document.body.appendChild(h3)
 }
 
 inputBox.addEventListener('keydown', passwordRequired);
