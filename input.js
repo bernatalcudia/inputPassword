@@ -7,7 +7,7 @@ function passwordRequired() {
     const lengthPassword = inputBox.value.length;
     const lengthName = inputName.value.length;
 
-    if (lengthPassword > 9) {
+    if (lengthPassword > 9 && lengthName > 0) {
         h3.style.color = "green";
         h3.innerText = "The password is save";
         login.setAttribute("class", "butLogin");
@@ -30,8 +30,14 @@ function passwordRequired() {
 
 function nameRequired() {
     if (inputName.value.length == 0) {
+        h3.style.color = "red";
+        h3.innerText = "Introduce your name";
+        login.removeAttribute("class", "butLogin");
+        login.setAttribute("disabled", "true");
+    } else {
+        passwordRequired();
     }
 }
 
-inputBox.addEventListener("keydown", passwordRequired);
-inputName.addEventListener("keydown", nameRequired);
+inputBox.addEventListener("input", passwordRequired);
+inputName.addEventListener("input", nameRequired);
