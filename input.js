@@ -1,10 +1,10 @@
-const inputBox = document.getElementById("input-box");
+const inputPassword = document.getElementById("input-password");
 const h3 = document.createElement("h3");
 const inputName = document.getElementById("input-name");
 const login = document.getElementById("butLog");
 
 function passwordRequired() {
-    const lengthPassword = inputBox.value.length;
+    const lengthPassword = inputPassword.value.length;
     const lengthName = inputName.value.length;
 
     if (lengthPassword > 9 && lengthName > 0) {
@@ -39,5 +39,5 @@ function nameRequired() {
     }
 }
 
-inputBox.addEventListener("input", passwordRequired);
+inputPassword.addEventListener("input", passwordRequired);
 inputName.addEventListener("input", nameRequired);
