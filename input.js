@@ -13,9 +13,6 @@ function passwordRequired() {
         h3.style.color = 'red';
         h3.innerText = 'The password is to short';
     }
-
-    console.log(lengthPassword)
-
     document.body.appendChild(h3);
 }
 
