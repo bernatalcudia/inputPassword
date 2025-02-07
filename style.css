@@ -1,4 +1,39 @@
-#input-box {
+* {
+    margin: 0;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+
+    gap: 1rem;
+}
+
+input {
+    padding: 0.4rem;
+    font-weight: bold;
     border: 3px solid violet;
     border-radius: 20%;
+}
+
+button {
+    padding: 0.4rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+.butLogin {
+    background-color: green;
+    transform: scale(1.1);
+    font-weight: bold;
+    color: white;
 }
